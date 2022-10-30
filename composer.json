@@ -3,7 +3,7 @@
   "description": "Test application for deployer-v7 upgrade",
   "license": "MIT",
   "require": {
-    "sourcebroker/deployer-extended": "@dev"
+    "deployer/deployer": "^7.0"
   },
   "repositories": [
     {
