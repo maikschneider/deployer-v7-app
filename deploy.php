@@ -1,7 +1,7 @@
 <?php
 namespace Deployer;
 
-require 'recipe/cakephp.php';
+require 'recipe/common.php';
 
 // Config
 
@@ -19,5 +19,11 @@ host('schnupfspruch')
     ->set('deploy_path', '/home/web0/vhosts/deployer-v7.maik-tailor.de/htdocs');
 
 // Hooks
-
 after('deploy:failed', 'deploy:unlock');
+
+// Tasks
+task('deploy', [
+    'deploy:prepare',
+    'deploy:vendors',
+    'deploy:publish',
+])->desc('Deploy your project');
