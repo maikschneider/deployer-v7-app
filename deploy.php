@@ -1,10 +1,15 @@
 <?php
 namespace Deployer;
 
-require 'recipe/common.php';
+require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
+
+new \SourceBroker\DeployerLoader\Load([
+    ['path' => 'vendor/sourcebroker/deployer-extended/deployer'],
+    ['path' => 'vendor/sourcebroker/deployer-instance/deployer'],
+    ['path' => 'vendor/sourcebroker/deployer-extended-database/deployer'],
+]);
 
 // Config
-
 set('repository', 'git@github.com:maikschneider/deployer-v7-app.git');
 
 add('shared_files', []);
@@ -19,7 +24,7 @@ host('schnupfspruch')
     ->set('deploy_path', '/home/web0/vhosts/deployer-v7.maik-tailor.de/htdocs');
 
 // Hooks
-after('deploy:failed', 'deploy:unlock');
+//after('deploy:failed', 'deploy:unlock');
 
 // Tasks
 task('deploy', [

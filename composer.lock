@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfe052e85e1cee70b8f98c090fe518b5",
+    "content-hash": "50d30de840be5aa042db1b70b0b604a3",
     "packages": [
         {
             "name": "deployer/deployer",
@@ -127,6 +127,46 @@
             }
         },
         {
+            "name": "sourcebroker/deployer-extended-database",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/deployer-extended-database",
+                "reference": "c51724932047adaed1e86010e6a1d6f318a7c13f"
+            },
+            "require": {
+                "deployer/dist": "^6.4.0",
+                "sourcebroker/deployer-instance": "^4.0.0",
+                "sourcebroker/deployer-loader": "^2.0.0",
+                "symfony/dotenv": "^3.3.0 || ^4.0.0 || ^5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SourceBroker\\DeployerExtendedDatabase\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krystian Szymukowicz",
+                    "email": "k.szymukowicz@gmail.com"
+                }
+            ],
+            "description": "Deployer tasks to manage database synchronization between application instances.",
+            "keywords": [
+                "database",
+                "deployer",
+                "deployer.org",
+                "synchronization"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "sourcebroker/deployer-instance",
             "version": "4.0.2",
             "source": {
@@ -170,6 +210,46 @@
                 "source": "https://github.com/sourcebroker/deployer-instance/tree/4.0.2"
             },
             "time": "2021-01-14T13:52:02+00:00"
+        },
+        {
+            "name": "sourcebroker/deployer-loader",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sourcebroker/deployer-loader.git",
+                "reference": "847630037f257151bafe7c48e97913663f19de7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sourcebroker/deployer-loader/zipball/847630037f257151bafe7c48e97913663f19de7b",
+                "reference": "847630037f257151bafe7c48e97913663f19de7b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SourceBroker\\DeployerLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krystian Szymukowicz",
+                    "email": "k.szymukowicz@gmail.com"
+                }
+            ],
+            "description": "Autoload of vendors and autoload of deployer tasks.",
+            "keywords": [
+                "deployer"
+            ],
+            "support": {
+                "issues": "https://github.com/sourcebroker/deployer-loader/issues",
+                "source": "https://github.com/sourcebroker/deployer-loader/tree/2.0.1"
+            },
+            "time": "2021-06-20T16:13:58+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -314,7 +394,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sourcebroker/deployer-extended": 20
+        "sourcebroker/deployer-extended": 20,
+        "sourcebroker/deployer-extended-database": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

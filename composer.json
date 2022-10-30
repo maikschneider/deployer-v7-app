@@ -4,7 +4,8 @@
   "license": "MIT",
   "require": {
     "deployer/deployer": "^7.0",
-    "sourcebroker/deployer-extended": "@dev"
+    "sourcebroker/deployer-extended": "@dev",
+    "sourcebroker/deployer-extended-database": "@dev"
   },
   "repositories": [
     {
