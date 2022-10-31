@@ -55,7 +55,7 @@ task('db:export', function () {
         $mysqlDumpArgs['absolutePath'] = escapeshellarg(FileUtility::normalizeFolder(get('db_storage_path')) . implode('#',
                 $filenameParts) . '.sql');
         run('{{local/bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
-            secret: escapeshellarg($databaseConfig['host']));
+            secret: escapeshellarg($databaseConfig['password']));
 
         // dump database data
         $filenameParts['type'] = 'type=data';
@@ -63,6 +63,6 @@ task('db:export', function () {
         $mysqlDumpArgs['absolutePath'] = escapeshellarg(FileUtility::normalizeFolder(get('db_storage_path'))
             . implode('#', $filenameParts) . '.sql');
         run('{{local/bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
-            secret: escapeshellarg($databaseConfig['host']));
+            secret: escapeshellarg($databaseConfig['password']));
     }
 });

@@ -2,10 +2,12 @@
 
 namespace Deployer;
 
+set('db_process_commands', '');
+
 set('db_export_mysqldump_options_structure', '--no-data=true --default-character-set=utf8 --no-tablespaces');
 
 set('db_export_mysqldump_options_data',
-    '--opt --skip-lock-tables --single-transaction --no-create-db --default-character-set=utf8 --no-tablespaces');
+    '--opt --skip-lock-tables --single-transaction --no-create-info --default-character-set=utf8 --no-tablespaces');
 
 set('db_storage_path', function () {
     $path = has('deploy_path') ? get('deploy_path') : getcwd();
