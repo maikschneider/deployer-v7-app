@@ -1,13 +1,9 @@
 <?php
 namespace Deployer;
 
-require_once(__DIR__ . '/vendor/sourcebroker/deployer-loader/autoload.php');
-
-new \SourceBroker\DeployerLoader\Load([
-    ['path' => 'vendor/sourcebroker/deployer-extended/deployer'],
-    ['path' => 'vendor/sourcebroker/deployer-instance/deployer'],
-    ['path' => 'vendor/sourcebroker/deployer-extended-database/deployer'],
-]);
+require_once(__DIR__ . '/vendor/autoload.php');
+require_once(__DIR__ . '/vendor/xima/deployer-extended/autoload.php');
+require_once(__DIR__ . '/vendor/xima/deployer-extended-typo3/autoload.php');
 
 // Config
 set('repository', 'git@github.com:maikschneider/deployer-v7-app.git');
@@ -23,12 +19,13 @@ host('schnupfspruch')
     ->set('remote_user', 'web0')
     ->set('deploy_path', '/home/web0/vhosts/deployer-v7.maik-tailor.de/htdocs');
 
-// Hooks
-//after('deploy:failed', 'deploy:unlock');
-
-// Tasks
-task('deploy', [
-    'deploy:prepare',
-    'deploy:vendors',
-    'deploy:publish',
-])->desc('Deploy your project');
+localhost('local')
+    ->set('db_databases', [
+        'default' => [
+            'host' => 'db',
+            'dbname' => 'db',
+            'password' => 'db',
+            'user' => 'db',
+            'port' => 3306,
+        ]
+    ]);

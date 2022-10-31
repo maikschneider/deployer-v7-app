@@ -1,0 +1,20 @@
+{
+  "name": "xima/deployer-extended",
+  "description": "Tasks for deployer",
+  "require": {
+    "deployer/deployer": "^7.0",
+    "symfony/dotenv": "^6.0"
+  },
+  "authors": [
+    {
+      "name": "Maik Schneider",
+      "email": "maik.schneider@xima.de",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Xima\\DeployerExtended\\": "src/"
+    }
+  }
+}

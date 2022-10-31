@@ -1,0 +1,14 @@
+{
+  "name": "xima/deployer-extended-typo3",
+  "description": "Deployer configuration for TYPO3",
+  "require": {
+    "xima/deployer-extended": "@dev"
+  },
+  "authors": [
+    {
+      "name": "Maik Schneider",
+      "email": "maik.schneider@xima.de",
+      "role": "Developer"
+    }
+  ]
+}
