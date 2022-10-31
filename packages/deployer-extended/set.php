@@ -30,19 +30,24 @@ set('db_storage_path', function () {
     return $path . '/.dep/database/dumps';
 });
 
-set('local/bin/deployer', function () {
+set('db_storage_path_local', function () {
+    $path = localhost()->has('deploy_path') ? localhost()->get('deploy_path') : getcwd();
+    return $path . '/.dep/database/dumps';
+});
+
+set('bin/deployer', function () {
     return './vendor/bin/dep';
 });
 
-set('local/bin/mysqldump', function () {
-    return run('command -v mysqldump || which mysqldump');
+set('bin/mysqldump', function () {
+    return which('mysqldump');
 });
 
-set('local/bin/mysql', function () {
-    return run('command -v mysql || which mysql');
+set('bin/mysql', function () {
+    return which('mysql');
 });
 
-set('local/bin/gzip', function () {
-    return run('command -v gzip || which gzip');
+set('bin/gzip', function () {
+    return which('gzip');
 });
 

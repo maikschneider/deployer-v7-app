@@ -54,7 +54,7 @@ task('db:export', function () {
         $mysqlDumpArgs['options'] = get('db_export_mysqldump_options_structure');
         $mysqlDumpArgs['absolutePath'] = escapeshellarg(FileUtility::normalizeFolder(get('db_storage_path')) . implode('#',
                 $filenameParts) . '.sql');
-        run('{{local/bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
+        run('{{bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
             secret: escapeshellarg($databaseConfig['password']));
 
         // dump database data
@@ -62,7 +62,7 @@ task('db:export', function () {
         $mysqlDumpArgs['options'] = get('db_export_mysqldump_options_data');
         $mysqlDumpArgs['absolutePath'] = escapeshellarg(FileUtility::normalizeFolder(get('db_storage_path'))
             . implode('#', $filenameParts) . '.sql');
-        run('{{local/bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
+        run('{{bin/mysqldump}} -p%secret% ' . vsprintf('-h%s -P%s -u%s -r%s %s %s %s', $mysqlDumpArgs),
             secret: escapeshellarg($databaseConfig['password']));
     }
 });
