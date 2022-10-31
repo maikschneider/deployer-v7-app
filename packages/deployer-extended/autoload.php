@@ -7,3 +7,4 @@ require __DIR__ . '/recipe/db/process.php';
 require __DIR__ . '/recipe/db/compress.php';
 require __DIR__ . '/recipe/db/decompress.php';
 require __DIR__ . '/recipe/db/download.php';
+require __DIR__ . '/recipe/db/import.php';
