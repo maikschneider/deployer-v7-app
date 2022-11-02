@@ -13,7 +13,7 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 
 // Hosts
-host('schnupfspruch')
+host('vserver')
     ->set('hostname', '84.38.66.101')
     ->set('port', '24327')
     ->set('remote_user', 'web0')
